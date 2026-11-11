@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BA7K ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e8a9bf;
+  --deep: #a65e7c;
+  --mauve: #8e647c;
+  --cream: #fff9fb;
+  --soft: #f9eaf0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: #684c5c;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 90px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: #b17a94;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(38px, 7vw, 58px);
+  color: var(--deep);
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a98b9b;
+}
+
+.initials {
+  font-family: 'Allura', cursive;
+  font-size: 65px;
+  color: var(--deep);
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.small-line {
+  width: 45px;
+  height: 1px;
+  background: var(--pink);
+  margin: 24px auto;
+}
+
+/* INTRO */
+#home {
+  background:
+    radial-gradient(ellipse at top, #fceaf1, transparent 65%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.brand {
+  font-size: 11px;
+  letter-spacing: 8px;
+  color: #b17a94;
+  margin-bottom: 32px;
+}
+
+#home h1 {
+  font-size: clamp(58px, 12vw, 100px);
+  color: var(--deep);
+  line-height: 1;
+}
+
+.intro-text {
+  max-width: 310px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  line-height: 1.5;
+  color: #98758a;
+  margin: 12px 0 30px;
+}
+
+.envelope-button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: transform .4s ease;
+}
+
+.envelope-button:hover {
+  transform: translateY(-7px);
+}
+
+.envelope {
+  width: 190px;
+  height: 125px;
+  position: relative;
+  background: #e9b5c7;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px #b8799230;
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f4d2df;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  z-index: 2;
+}
+
+.envelope:after {
+  content: "♡";
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  color: #a65e7c;
+  font-size: 27px;
+  z-index: 3;
+}
+
+.open-text {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #a77b91;
+  margin-top: 17px;
+}
+
+#home.opened .envelope-button {
+  transform: scale(1.08);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* LETTER */
+#letter {
+  background: linear-gradient(180deg, #fff9fb, #fbedf2);
+}
+
+.letter-card {
+  width: min(100%, 620px);
+  background: #fffdfd;
+  padding: clamp(28px, 7vw, 65px);
+  border: 1px solid #f2dce5;
+  box-shadow: 0 20px 60px #9f6b8412;
+  text-align: left;
+  position: relative;
+}
+
+.letter-card:before {
+  content: "♡";
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: #e3b2c4;
+  font-size: 22px;
+}
+
+.letter-card h3 {
+  font-family: 'Allura', cursive;
+  color: var(--deep);
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 22px;
+}
+
+.letter-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #765b6b;
+}
+
+.signature {
+  font-family: 'Allura', cursive;
+  font-size: 37px;
+  color: var(--deep);
+  text-align: right;
+  margin-top: 25px;
+}
+
+/* GALLERY */
+#gallery {
+  background: #fff9fb;
+}
+
+.gallery-intro {
+  max-width: 320px;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #a28796;
+  margin-bottom: 40px;
+}
+
+.gallery {
+  width: min(100%, 760px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.polaroid {
+  background: white;
+  padding: 10px 10px 20px;
+  box-shadow: 0 12px 30px #9c6e8117;
+  transform: rotate(-2deg);
+  transition: transform .35s ease;
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0) translateY(-7px);
+}
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  background: #f5e5ec;
+}
+
+.polaroid p {
+  font-family: 'Allura', cursive;
+  font-size: 25px;
+  color: #96677f;
+  margin-top: 10px;
+}
+
+/* ADORING */
+#adore {
+  background: linear-gradient(160deg, #fbedf2, #fff9fb);
+}
+
+.adore-list {
+  width: min(100%, 440px);
+  margin-top: 25px;
+}
+
+.adore-item {
+  padding: 17px 10px;
+  border-bottom: 1px solid #ecd6e0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  color: #866477;
+}
+
+.adore-item span {
+  color: #d99bb3;
+  margin-right: 9px;
+}
+
+/* END */
+#end {
+  background: #f8eaf0;
+  min-height: 90vh;
+}
+
+#end h2 {
+  font-family: 'Allura', cursive;
+  font-size: clamp(55px, 11vw, 90px);
+}
+
+.final-message {
+  max-width: 420px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1.7;
+  color: #88677a;
+}
+
+.footer {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #b18b9e;
+  margin-top: 55px;
+}
+
+/* MUSIC */
+.music-button {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #e9c5d3;
+  border-radius: 50px;
+  padding: 12px 17px;
+  background: #fffafc;
+  color: #98647d;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #80546b18;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #e5a9bf;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatUp 8s linear forwards;
+  opacity: .65;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .65; }
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+@media (max-width: 520px) {
+  section { padding: 75px 18px; }
+  .gallery { gap: 13px; }
+  .polaroid { padding: 7px 7px 14px; }
+  .polaroid p { font-size: 21px; }
+  .letter-card p { font-size: 19px; }
+  .initials { font-size: 58px; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop preload="auto">
+  <source src="sweet.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicBtn" onclick="toggleMusic()">
+  ♫ Play music
+</button>
+
+<section id="home">
+  <div class="brand">A LITTLE SOMETHING FOR YOU</div>
+  <h1>BA7K</h1>
+  <div class="initials">𝓐 ♾ 𝓜</div>
+  <div class="small-line"></div>
+
+  <p class="intro-text">
+    In a world full of people, my heart will always find its way to you.
+  </p>
+
+  <button class="envelope-button" onclick="openLetter()">
+    <div class="envelope"></div>
+    <div class="open-text">OPEN YOUR LETTER</div>
+  </button>
+
+  <p class="subtitle">MADE WITH LOVE ♡</p>
+</section>
+
+<section id="letter">
+  <div class="eyebrow">A LETTER FOR YOU</div>
+  <h2>Some words from my heart</h2>
+
+  <div class="letter-card">
+    <h3>To My Favorite Person,</h3>
+
+    <p>
+      I don't think words will ever be enough to explain how much you mean to me.
+    </p>
+
+    <p>
+      You're not just someone I love; you're my happiness, my comfort, and the most beautiful part of my life.
+    </p>
+
+    <p>
+      I can't imagine my days without you in them. You make everything feel warmer, brighter, and more meaningful just by being yourself.
+    </p>
+
+    <p>
+      If I could choose one person to have beside me through every chapter of my life, in every lifetime, it would always be you.
+    </p>
+
+    <p>
+      I don't need a perfect world, as long as I have you in mine.
+    </p>
+
+    <p>
+      You are my favorite hello, my hardest goodbye, and my sweetest forever.
+    </p>
+
+    <p>
+      I love you more than words could ever explain.
+    </p>
+
+    <div class="signature">Forever yours ♡</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="eyebrow">THEN & NOW</div>
+  <h2>Little pieces of us</h2>
+
+  <p class="gallery-intro">
+    Two stories, two journeys, and four little glimpses of the people we used to be and the people we are today.
+  </p>
+
+  <div class="gallery">
+    <div class="polaroid">
+      <img src="photo1.png" alt="A childhood photo">
+      <p>A little me</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="photo3.jpeg" alt="A childhood photo">
+      <p>A little you</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="photo2.jpeg" alt="A recent photo">
+      <p>Me, today</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="photo4.jpeg" alt="A recent photo">
+      <p>You, today</p>
+    </div>
+  </div>
+</section>
+
+<section id="adore">
+  <div class="eyebrow">A FEW LITTLE THINGS</div>
+  <h2>Things I Adore</h2>
+
+  <p class="subtitle">THE LITTLE THINGS MATTER THE MOST</p>
+
+  <div class="adore-list">
+    <div class="adore-item"><span>♡</span> Your beautiful soul</div>
+    <div class="adore-item"><span>♡</span> The way you make me smile</div>
+    <div class="adore-item"><span>♡</span> Your kindness</div>
+    <div class="adore-item"><span>♡</span> Simply being yourself</div>
+    <div class="adore-item"><span>♡</span> Everything that makes you, you</div>
+  </div>
+</section>
+
+<section id="end">
+  <div class="eyebrow">AND ONE LAST THING</div>
+  <h2>Always & Forever</h2>
+
+  <div class="initials">𝓐 ♾ 𝓜</div>
+
+  <div class="small-line"></div>
+
+  <p class="final-message">
+    No matter how many pages this little website has, there will never be enough space to say how special you are.
+    <br><br>
+    This is just a little reminder that you mean so much.
+  </p>
+
+  <div class="footer">BA7K · MADE WITH LOVE</div>
+</section>
+
+<script>
+const music = document.getElementById('music');
+const musicBtn = document.getElementById('musicBtn');
+
+function openLetter() {
+  document.getElementById('home').classList.add('opened');
+
+  music.play().then(() => {
+    musicBtn.textContent = '♫ Pause music';
+  }).catch(() => {
+    musicBtn.textContent = '♫ Play music';
+  });
+
+  setTimeout(() => {
+    document.getElementById('letter').scrollIntoView({
+      behavior: 'smooth'
+    });
+  }, 450);
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play().then(() => {
+      musicBtn.textContent = '♫ Pause music';
+    }).catch(() => {
+      musicBtn.textContent = '♫ Play music';
+    });
+  } else {
+    music.pause();
+    musicBtn.textContent = '♫ Play music';
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = Math.random() > .5 ? '♡' : '♥';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (12 + Math.random() * 15) + 'px';
+  heart.style.animationDuration = (6 + Math.random() * 5) + 's';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 11000);
+}
+
+setInterval(createHeart, 1500);
+</script>
+
+</body>
+</html>
